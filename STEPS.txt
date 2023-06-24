@@ -41,8 +41,14 @@ dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.15
 dotnet tool uninstall --global dotnet-ef
 dotnet tool install --global dotnet-ef --version 6.0.15
 
+dotnet new tool-manifest
+dotnet tool uninstall --local dotnet-ef
+dotnet tool install --local dotnet-ef --version 6.0.15
+
+
 # show all tools installed
 dotnet tool list --global
+dotnet tool list --local
 
 7> 
 dotnet ef migrations add InitialCreate -o Data/Migrations
@@ -56,3 +62,7 @@ Install vscode addon "SQLite" by alexcvzz
 dotnet ef migrations add UserPasswordAdded
 
 dotnet ef database update
+
+8> 
+dotnet build
+dotnet watch run
