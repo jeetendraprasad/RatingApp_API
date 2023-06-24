@@ -1,0 +1,45 @@
+
+0> download zip version of dotnet sdk from and unzip it  https://download.visualstudio.microsoft.com/download/pr/61f44f70-0f5a-4b89-ae95-b26c80567917/abac586ea20fb485702ea496fe83b9ee/dotnet-sdk-6.0.411-win-x64.zip
+
+1> cd to this folder
+2> set PATH=<dotnet_sdk_extract_path>\dotnet-sdk-6.0.411-win-x64;%PATH%
+
+3>
+dotnet --info
+dotnet --help
+dotnet new -h
+dotnet new --list
+
+4> mkdir RatingApp_API (this folder)
+cd RatingApp_API (this folder)
+
+git init
+
+dotnet new webapi -n API
+
+5> cd API
+
+6> 
+code .
+
+in vs code install extensions
+C#
+C# extensions
+Material Icons Theme
+
+dotnet watch run
+
+Open https://localhost:7165/swagger/index.html in browser
+
+code change starts
+
+install addon NuGet Gallery in vs code
+
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 6.0.15
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.15
+
+dotnet tool uninstall --global dotnet-ef
+dotnet tool install --global dotnet-ef --version 6.0.15
+
+# show all tools installed
+dotnet tool list --global
